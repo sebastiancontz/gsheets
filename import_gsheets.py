@@ -24,7 +24,7 @@ def credentials(json_file):
     return google_cred
 
 
-def import_gsheet(workbook, sheet: int =0):
+def gsheet_to_df(workbook, sheet: int =0):
     '''
 
     Funcion que devuelve un dataframe de pandas a partir del nombre del libro de google sheets,
@@ -38,7 +38,7 @@ def import_gsheet(workbook, sheet: int =0):
         
     '''
     gc = credentials(JSON_CRED)
-    wks = gc.open(workbook).get_workbook(sheet)
+    wks = gc.open(workbook).get_worksheet(sheet)
     data = wks.get_all_values()
     headers = data.pop(0)
     dataframe = pd.DataFrame(data, columns=headers)
@@ -58,3 +58,24 @@ def get_gsheets(worksheet):
     print("Hojas encontradas:")
     for sheet in wks.worksheets():
         print(sheet)
+
+def open_sheet(workbook, sheet: int =0):
+    '''
+
+    Funcion que devuelve una hoja de google sheet
+    Args:
+        workbook (str): nombre del workbook de google sheets.  
+    Returns:
+        gsheet: hoja de google sheets.  
+    '''
+    gc = credentials(JSON_CRED)
+    gsheet = gc.open(workbook).get_worksheet(sheet)
+    return gsheet
+
+def get_acell_value(sheet, cell: str):
+    try:
+        gsheet = open_sheet(sheet)
+        cell = gsheet.acell(cell).value
+        return cell
+    except:
+        print(f"No existe celda {cell}")
