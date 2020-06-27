@@ -43,22 +43,30 @@ Esta es la parte más "compleja" del proyecto, y la que más tiempo consume, per
 
 - Primero debemos ir a la [consola para desarrolladores de google](https://console.developers.google.com/cloud-resource-manager) y seleccionar `create project`. 
 Para este ejemplo creare un proyecto llamado `gsheets`.
+![](https://raw.githubusercontent.com/sebastiancontz/gsheets/master/assets/create_project.PNG)
 
 - Una vez creado el proyecto, refrescamos el navegador y debiese aparecer dentro de la listas de proyectos:
+![](https://github.com/sebastiancontz/gsheets/blob/master/assets/new_project.PNG?raw=true)
 
 - Luego vamos al menu, y bajo el submenú de `APIs & Services` presionamos `Credentials`.
+![](https://github.com/sebastiancontz/gsheets/blob/master/assets/credentials.PNG?raw=true)
 
 - Nos aseguramos que dentro de los proyectos esté seleccionado el que acabamos de crear y seleccionamos `Create credentials`, eligiendo la opción `Service account`.
+![](https://github.com/sebastiancontz/gsheets/blob/master/assets/credentials_3.PNG?raw=true)
 
 - Acá le damos un nombre cualquiera, en este caso, lo nombraremos `gsheets` y le damos a `create`.
+![](https://github.com/sebastiancontz/gsheets/blob/master/assets/credentials_4.PNG?raw=true)
 
 - En el siguiente paso necesitamos seleccionar el rol `owner` y presionamos `create`
+![](https://github.com/sebastiancontz/gsheets/blob/master/assets/credentials_5.PNG?raw=true)
 
 - En tercer paso no es necesario cambiar nada, simplemente seleccionamos `done`.
 
 - Una vez creada las credenciales, la página de `APIs & Services` se debiese ver similar a la siguiente:
+![](https://github.com/sebastiancontz/gsheets/blob/master/assets/credentials_6.PNG?raw=true)
 
 - Hacemos click en el nombre de la credencial, en mi caso, `gsheets@gsheets-281618.iam.gserviceaccount.com`, acción que desplegará un nuevo menú, en el cual debemos ir a `add key` y presionamos `create new key`.
+![](https://github.com/sebastiancontz/gsheets/blob/master/assets/credentials_7.PNG?raw=true)
 
 - El formato que debemos seleccionar es `json` y presionamos `create`, acción que generará una descarga automática de nuestra key en formato json. ⚠ _Importante destacar que si perdemos este archivo perderemos el acceso a nuestro proyecto, por lo cual es importante manterlo respaldado_ ⚠
 
